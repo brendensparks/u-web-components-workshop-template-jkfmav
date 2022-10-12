@@ -38,6 +38,19 @@ class UMark extends LitElement {
         @media (min-width: 400px) {
           width: 250px;
         }
+
+        
+.grayscale.text, 
+.grayscale.shield-darkest {   
+  fill:#231f20; 
+}
+.grayscale.shield-shadow { 
+  fill:#a7a9ac; 
+}
+
+.text.invert{ 
+  fill:#fff;
+}
     `,
     ];
   }
