@@ -261,6 +261,20 @@ class uSearch extends LitElement {
   }
 
   /* TODO: SLIDE 81 */
+
+/**
+  * handles search button click
+  * @event search  
+  */
+ fireSearch() {
+  this.dispatchEvent(
+     new CustomEvent('search', {
+       detail: this.input ? this.input.value : undefined,
+     })
+   );
+}
+
+
 }
 window.customElements.define(uSearch.tag, uSearch);
 export { uSearch };
