@@ -50,7 +50,7 @@ class UMark extends LitElement {
        */
       grayscale: {
         type: Boolean,
-        attribute: `grayscale`, /* This allows a user to add the `grayscale` attribute to the custom element */
+        attribute: `grayscale` /* This allows a user to add the `grayscale` attribute to the custom element */,
       },
       /* TODO: SLIDE 72 */
       /**
@@ -133,17 +133,19 @@ class UMark extends LitElement {
         </defs>
         <!-- TODO: SLIDE 73.1 -->
         <path 
-          class="shield-lightest" 
+          class="shield-lightest${this.grayscale ? ' grayscale' : ''}"
           d="${uMarkPaths.light}"/>
         <path 
-          class="shield-darkest" 
+          class="shield-darkest${this.grayscale ? ' grayscale' : ''}" 
           d="${uMarkPaths.dark}"/>
         <path 
-          class="shield-shadow" 
+          class="shield-shadow${this.grayscale ? ' grayscale' : ''}" 
           d="${uMarkPaths.shadow}"/>
         <!-- TODO: SLIDE 73.2 -->
         <path 
-          class="text" 
+          class="text${this.grayscale ? ' grayscale' : ''}${
+      this.invert ? ' invert' : ''
+    }" 
           d="${this.svgData?.path}"/>
         </svg>
       `;
