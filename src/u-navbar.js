@@ -35,11 +35,6 @@ class uNavbar extends LitElement {
         }
         /* TODO: SLIDES 91 & 93 */
 
-        ::slotted(nav), ::slotted(a) {
-          color: blue!important;
-          background: yelllow!important;
-          /* try again */
-        }
 
     `,
     ];
