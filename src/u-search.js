@@ -192,7 +192,7 @@ class uSearch extends LitElement {
         }"/>
       </div>
       <!-- TODO: SLIDE 79 -->
-      <button id="search-button" controls="search-text">
+      <button id="search-button" controls="search-text" @click="${this.onClick}">
         <span id="search-button-label" class="${
           this.showButtonLabel && !(this.toggles && this.toggled)
             ? ''
@@ -243,6 +243,22 @@ class uSearch extends LitElement {
   }
 
   /* TODO: SLIDE 80 */
+
+  /**
+   * handles search button click
+   * @param {event} e event
+   */
+   onClick(e) {
+    if (this.toggles && this.toggled && this.input !== '') { 
+      this.fireSearch(); 
+    }
+    this.toggled = !this.toggled;
+    if (this.toggles && this.toggled) {
+      this.input.focus();
+    } else {
+      this.button.focus();
+   }
+  }
 
   /* TODO: SLIDE 81 */
 }
