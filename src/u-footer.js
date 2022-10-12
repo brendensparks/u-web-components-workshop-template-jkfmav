@@ -2,6 +2,8 @@
 import { LitElement, css, html } from 'lit';
 /* TODO SLIDE 110.1 */
 
+import { UMark } from `./u-mark.js`;
+
 /* TODO: SLIDE 43 */
 /**
  * `u-footer`
@@ -88,6 +90,9 @@ li:first-child {
 static get properties() {
   return {
     /* TODO: SLIDE 110.2 */
+
+    ...UMark.properties,
+
   };
 }
 
@@ -98,13 +103,10 @@ static get properties() {
 render() {
   return html`
     <!-- TODO: SLIDE 111 -->
-    <ul>
-      <li><a href="#privacy-statement">Privacy</a></li>
-      <li><a href="#ad85">Non-discrimination</a></li>
-      <li><a href="#hr11">Equal Opportunity</a></li>
-      <li><a href="#accessibility-statement">Accessibility</a></li>
-      <li><a href="#copyright-information">Copyright</a></li>
-    </ul>`;
+    <u-mark
+      ?invert="${this.invert}"
+      ?grayscale="${this.grayscale}">
+    </u-mark>`;
 }
 
 /* TODO: SLIDE 49 */
