@@ -159,7 +159,7 @@ class UMark extends LitElement {
           class="text${this.grayscale ? ' grayscale' : ''}${
       this.invert ? ' invert' : ''
     }" 
-          d="${this.svgData?.path}"/>
+    d="${this._textPath}"/>
         </svg>
       `;
   }
